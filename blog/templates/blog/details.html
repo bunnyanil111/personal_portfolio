@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>blogs</title>
+</head>
+<body bgcolor="skyblue">
+{%for blg in blgs%}
+<p>
+	<a href='{% url "detail" blg.id %}'><h2>{{blg.title}}</h2></a>
+</p>
+{{blg.description}}<br>
+{%endfor%}
+</body>
+</html>

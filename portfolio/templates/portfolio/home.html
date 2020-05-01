@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PORTFOLIO</title>
+</head>
+<body bgcolor="skyblue">
+
+<h1 align="center">ANIL'S PORTFOLIO</h1><br>
+{% load static %}
+<p align="center"><img src="{%static 'portfolio/anil.jpg'%}"align="center"><br>
+<a href="{%static 'portfolio/resume.pdf'%}" align=center>RESUME</a><br>
+<a href='{% url "out" %}'>LinkedIn</a><br>
+<a href='{% url "blog" %}'>Blogs</a>
+</p><br>
+{%for project in projects%}
+{{project.title}}
+<p>{{project.description}}</p>
+<p><img src="{{project.image.url}}"width=400px,height=400px></p>
+{%if project.url %}
+<a href='{{project.url}}'>link</a><br>
+{%endif%}
+{%endfor%}<br>
+
+</body>
+</html>
